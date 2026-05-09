@@ -4,7 +4,7 @@ import java.time.LocalDate;
 
 public class Perishable extends Ingredients {
 
-    private LocalDate expiryDate;
+    private final LocalDate expiryDate;
 
     public Perishable(String name, double quantity, String unit, LocalDate expiryDate) {
         super(name, quantity, unit);

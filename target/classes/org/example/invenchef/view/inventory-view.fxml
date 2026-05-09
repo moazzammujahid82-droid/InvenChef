@@ -52,7 +52,8 @@
             </padding>
             <Label text="Add Ingredient" style="-fx-font-size: 18px; -fx-font-weight: bold;"/>
             <TextField fx:id="ingredientNameField" promptText="Name"/>
-            <TextField fx:id="quantityField" promptText="Quantity and unit, e.g. 2 kg"/>
+            <TextField fx:id="quantityField" promptText="Quantity, e.g. 2"/>
+            <ComboBox fx:id="unitCombo" maxWidth="Infinity"/>
             <ComboBox fx:id="categoryCombo" maxWidth="Infinity"/>
             <DatePicker fx:id="expiryDatePicker" promptText="Expiry date" maxWidth="Infinity"/>
             <HBox spacing="8">

@@ -1,10 +1,10 @@
+org\example\invenchef\controller\HelloController.class
+org\example\invenchef\HelloApplication.class
+org\example\invenchef\Launcher.class
+org\example\invenchef\model\Fridge.class
 org\example\invenchef\controller\InventoryController.class
 org\example\invenchef\model\Recipe.class
-org\example\invenchef\controller\HelloController.class
 org\example\invenchef\controller\InventoryController$1.class
 org\example\invenchef\model\PantryStaple.class
 org\example\invenchef\model\Ingredients.class
 org\example\invenchef\model\Perishable.class
-org\example\invenchef\HelloApplication.class
-org\example\invenchef\Launcher.class
-org\example\invenchef\model\Fridge.class

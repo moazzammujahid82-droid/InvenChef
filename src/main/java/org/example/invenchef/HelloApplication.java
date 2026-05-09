@@ -12,7 +12,7 @@ public class HelloApplication extends Application {
 
     @Override
     public void start(Stage stage) throws IOException {
-        FXMLLoader loader = new FXMLLoader(HelloApplication.class.getResource("inventory-view.fxml"));
+        FXMLLoader loader = new FXMLLoader(HelloApplication.class.getResource("view/inventory-view.fxml"));
         Parent root = loader.load();
 
         Scene scene = new Scene(root, 900, 600);
