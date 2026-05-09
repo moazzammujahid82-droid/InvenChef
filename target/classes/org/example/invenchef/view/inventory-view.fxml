@@ -1,90 +1,260 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.geometry.Insets?>
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.control.ComboBox?>
-<?import javafx.scene.control.DatePicker?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.control.TableColumn?>
-<?import javafx.scene.control.TableView?>
-<?import javafx.scene.control.TextField?>
-<?import javafx.scene.layout.BorderPane?>
-<?import javafx.scene.layout.ColumnConstraints?>
-<?import javafx.scene.layout.GridPane?>
-<?import javafx.scene.layout.HBox?>
-<?import javafx.scene.layout.RowConstraints?>
-<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
 
 <BorderPane xmlns:fx="http://javafx.com/fxml"
             fx:controller="org.example.invenchef.controller.InventoryController"
-            style="-fx-background-color: #f6f7f4;">
+            stylesheets="@../css/InventoryStyle.css"
+            style="-fx-background-color: #f4f4f4;">
+
     <top>
-        <VBox spacing="12" style="-fx-background-color: #ffffff; -fx-border-color: #d8ded4; -fx-border-width: 0 0 1 0;">
+        <HBox alignment="CENTER_LEFT"
+              prefHeight="80"
+              style="-fx-background-color: #174b33;">
             <padding>
-                <Insets top="16" right="20" bottom="16" left="20"/>
+                <Insets top="20" right="30" bottom="20" left="30"/>
             </padding>
-            <Label text="InvenChef Inventory" style="-fx-font-size: 24px; -fx-font-weight: bold; -fx-text-fill: #26352b;"/>
-            <HBox spacing="12">
-                <VBox spacing="4">
-                    <Label text="Total" style="-fx-text-fill: #58645c;"/>
-                    <Label fx:id="totalLabel" text="0" style="-fx-font-size: 20px; -fx-font-weight: bold;"/>
-                </VBox>
-                <VBox spacing="4">
-                    <Label text="Fresh" style="-fx-text-fill: #58645c;"/>
-                    <Label fx:id="freshLabel" text="0" style="-fx-font-size: 20px; -fx-font-weight: bold;"/>
-                </VBox>
-                <VBox spacing="4">
-                    <Label text="Expiring" style="-fx-text-fill: #58645c;"/>
-                    <Label fx:id="expiringLabel" text="0" style="-fx-font-size: 20px; -fx-font-weight: bold;"/>
-                </VBox>
-                <VBox spacing="4">
-                    <Label text="Expired" style="-fx-text-fill: #58645c;"/>
-                    <Label fx:id="expiredLabel" text="0" style="-fx-font-size: 20px; -fx-font-weight: bold;"/>
-                </VBox>
-            </HBox>
-        </VBox>
+
+            <Label text="Inventory Management"
+                   style="-fx-font-size: 28px;
+                          -fx-font-weight: bold;
+                          -fx-text-fill: white;"/>
+
+            <Region HBox.hgrow="ALWAYS"/>
+
+            <Label text="InvenChef"
+                   style="-fx-font-size: 24px;
+                          -fx-text-fill: #74c69d;"/>
+        </HBox>
     </top>
 
     <left>
-        <VBox spacing="10" prefWidth="260" style="-fx-background-color: #eef2ea; -fx-border-color: #d8ded4; -fx-border-width: 0 1 0 0;">
-            <padding>
-                <Insets top="20" right="16" bottom="20" left="16"/>
-            </padding>
-            <Label text="Add Ingredient" style="-fx-font-size: 18px; -fx-font-weight: bold;"/>
-            <TextField fx:id="ingredientNameField" promptText="Name"/>
-            <TextField fx:id="quantityField" promptText="Quantity, e.g. 2"/>
-            <ComboBox fx:id="unitCombo" maxWidth="Infinity"/>
-            <ComboBox fx:id="categoryCombo" maxWidth="Infinity"/>
-            <DatePicker fx:id="expiryDatePicker" promptText="Expiry date" maxWidth="Infinity"/>
-            <HBox spacing="8">
-                <Button fx:id="addIngredientBtn" text="Add" maxWidth="Infinity" HBox.hgrow="ALWAYS"
-                        style="-fx-background-color: #4a7c5e; -fx-text-fill: white;"/>
-                <Button fx:id="clearFormBtn" text="Clear" maxWidth="Infinity" HBox.hgrow="ALWAYS"/>
-            </HBox>
-        </VBox>
+        <fx:include source="app-controller.fxml" />
     </left>
 
     <center>
-        <VBox spacing="12">
-            <padding>
-                <Insets top="20" right="20" bottom="20" left="20"/>
-            </padding>
-            <HBox spacing="8">
-                <Button fx:id="allTab" text="All"/>
-                <Button fx:id="perishableTab" text="Perishable"/>
-                <Button fx:id="pantryTab" text="Pantry"/>
-                <Button fx:id="expiredTab" text="Expired"/>
-            </HBox>
-            <TableView fx:id="inventoryTable" VBox.vgrow="ALWAYS">
-                <columns>
-                    <TableColumn fx:id="nameColumn" text="Name"/>
-                    <TableColumn fx:id="qtyColumn" text="Quantity"/>
-                    <TableColumn fx:id="typeColumn" text="Type"/>
-                    <TableColumn fx:id="expiryColumn" text="Expiry"/>
-                    <TableColumn fx:id="deleteColumn" text=""/>
-                </columns>
-            </TableView>
-            <Label fx:id="pageIndicator" text="Screen 1 of 1" style="-fx-text-fill: #58645c;"/>
-        </VBox>
+        <ScrollPane fitToHeight="true"
+                    fitToWidth="true"
+                    hbarPolicy="AS_NEEDED"
+                    vbarPolicy="AS_NEEDED"
+                    style="-fx-background-color: transparent; -fx-background: transparent;">
+            <content>
+                <HBox spacing="16">
+                    <padding>
+                        <Insets top="16" right="16" bottom="16" left="16"/>
+                    </padding>
+
+                    <VBox spacing="16" prefWidth="340" minWidth="300" maxWidth="380">
+                        <VBox spacing="12"
+                              style="-fx-background-color: white;
+                                     -fx-background-radius: 8;
+                                     -fx-padding: 16;
+                                     -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.08), 10,0,0,2);">
+
+                    <Label text="Add New Ingredient"
+                           style="-fx-font-size: 24px;
+                                  -fx-font-weight: bold;
+                                  -fx-text-fill: #1b4332;"/>
+
+                    <VBox spacing="10">
+                        <Label text="Ingredient Name" styleClass="form-label"/>
+                        <TextField fx:id="ingredientNameField"
+                                   promptText="e.g. Milk"/>
+
+                        <Label text="Quantity" styleClass="form-label"/>
+                        <TextField fx:id="quantityField"
+                                   promptText="e.g. 2"/>
+
+                        <Label text="Unit" styleClass="form-label"/>
+                        <ComboBox fx:id="unitCombo"
+                                  maxWidth="Infinity"/>
+
+                        <Label text="Category" styleClass="form-label"/>
+                        <ComboBox fx:id="categoryCombo"
+                                  maxWidth="Infinity"/>
+
+                        <Label text="Expiry Date" styleClass="form-label"/>
+                        <DatePicker fx:id="expiryDatePicker"
+                                    maxWidth="Infinity"/>
+                    </VBox>
+
+                    <HBox spacing="10">
+                        <Button fx:id="addIngredientBtn"
+                                text="+ Add Ingredient"
+                                prefHeight="45"
+                                HBox.hgrow="ALWAYS"
+                                maxWidth="Infinity"
+                                style="-fx-background-color: #40916c;
+                                       -fx-background-radius: 8;
+                                       -fx-text-fill: white;
+                                       -fx-font-size: 14px;
+                                       -fx-font-weight: bold;"/>
+
+                        <Button fx:id="clearFormBtn"
+                                text="Clear Form"
+                                prefHeight="45"
+                                HBox.hgrow="ALWAYS"
+                                maxWidth="Infinity"
+                                style="-fx-background-color: #dddddd;
+                                       -fx-background-radius: 8;
+                                       -fx-font-size: 14px;"/>
+                    </HBox>
+                </VBox>
+
+                <VBox spacing="15"
+                      style="-fx-background-color: white;
+                             -fx-background-radius: 8;
+                             -fx-padding: 16;
+                             -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.08), 10,0,0,2);">
+
+                    <Label text="Inventory Stats"
+                           style="-fx-font-size: 22px;
+                                  -fx-font-weight: bold;"/>
+
+                    <HBox spacing="8">
+                        <VBox alignment="CENTER"
+                              prefWidth="72"
+                              prefHeight="70"
+                              HBox.hgrow="ALWAYS"
+                              style="-fx-background-color: #40916c;
+                                     -fx-background-radius: 8;">
+                            <Label fx:id="totalLabel"
+                                   text="0"
+                                   style="-fx-text-fill: white;
+                                          -fx-font-size: 16px;
+                                          -fx-font-weight: bold;"/>
+                        </VBox>
+
+                        <VBox alignment="CENTER"
+                              prefWidth="72"
+                              prefHeight="70"
+                              HBox.hgrow="ALWAYS"
+                              style="-fx-background-color: #52b788;
+                                     -fx-background-radius: 8;">
+                            <Label fx:id="freshLabel"
+                                   text="0"
+                                   style="-fx-text-fill: white;
+                                          -fx-font-size: 16px;
+                                          -fx-font-weight: bold;"/>
+                        </VBox>
+
+                        <VBox alignment="CENTER"
+                              prefWidth="72"
+                              prefHeight="70"
+                              HBox.hgrow="ALWAYS"
+                              style="-fx-background-color: #fca311;
+                                     -fx-background-radius: 8;">
+                            <Label fx:id="expiringLabel"
+                                   text="0"
+                                   style="-fx-text-fill: white;
+                                          -fx-font-size: 16px;
+                                          -fx-font-weight: bold;"/>
+                        </VBox>
+
+                        <VBox alignment="CENTER"
+                              prefWidth="72"
+                              prefHeight="70"
+                              HBox.hgrow="ALWAYS"
+                              style="-fx-background-color: #d62828;
+                                     -fx-background-radius: 8;">
+                            <Label fx:id="expiredLabel"
+                                   text="0"
+                                   style="-fx-text-fill: white;
+                                          -fx-font-size: 16px;
+                                          -fx-font-weight: bold;"/>
+                        </VBox>
+                    </HBox>
+                </VBox>
+            </VBox>
+
+                    <VBox spacing="15"
+                          HBox.hgrow="ALWAYS"
+                          minWidth="300"
+                          style="-fx-background-color: white;
+                                 -fx-background-radius: 8;
+                                 -fx-padding: 16;
+                                 -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.08), 10,0,0,2);">
+
+                <Label text="Current Inventory"
+                       style="-fx-font-size: 24px;
+                              -fx-font-weight: bold;
+                              -fx-text-fill: #1b4332;"/>
+
+                <HBox spacing="10">
+                    <Button fx:id="allTab"
+                            text="All"
+                            prefWidth="82"
+                            prefHeight="35"
+                            style="-fx-background-color: #40916c;
+                                   -fx-text-fill: white;
+                                   -fx-background-radius: 8;
+                                   -fx-font-weight: bold;"/>
+
+                    <Button fx:id="perishableTab"
+                            text="Perishable"
+                            prefWidth="92"
+                            prefHeight="35"
+                            style="-fx-background-color: #e9ecef;
+                                   -fx-background-radius: 8;"/>
+
+                    <Button fx:id="pantryTab"
+                            text="Pantry"
+                            prefWidth="82"
+                            prefHeight="35"
+                            style="-fx-background-color: #e9ecef;
+                                   -fx-background-radius: 8;"/>
+
+                    <Button fx:id="expiredTab"
+                            text="Expired"
+                            prefWidth="82"
+                            prefHeight="35"
+                            style="-fx-background-color: #e9ecef;
+                                   -fx-background-radius: 8;"/>
+                </HBox>
+
+                <TableView fx:id="inventoryTable"
+                           VBox.vgrow="ALWAYS"
+
+                           style="-fx-background-color: transparent;
+                                  -fx-border-color: transparent;
+                                  -fx-table-cell-border-color: transparent;
+                                  -fx-padding: 10;">
+                    <columns>
+                        <TableColumn fx:id="nameColumn"
+                                     text="Name"
+                                     prefWidth="120"
+                                     style="-fx-alignment: CENTER;"/>
+
+                        <TableColumn fx:id="qtyColumn"
+                                     text="Qty"
+                                     prefWidth="90"
+                                     style="-fx-alignment: CENTER;"/>
+
+                        <TableColumn fx:id="typeColumn"
+                                     text="Type"
+                                     prefWidth="80"
+                                     style="-fx-alignment: CENTER;"/>
+
+                        <TableColumn fx:id="expiryColumn"
+                                     text="Expiry"
+                                     prefWidth="90"
+                                     style="-fx-alignment: CENTER;"/>
+
+                        <TableColumn fx:id="deleteColumn"
+                                     text="Delete"
+                                     prefWidth="80"
+                                     style="-fx-alignment: CENTER;"/>
+                    </columns>
+                </TableView>
+
+                <Label fx:id="pageIndicator"
+                       text="Screen 1 of 1"
+                       style="-fx-text-fill: #6c757d;"/>
+                    </VBox>
+                </HBox>
+            </content>
+        </ScrollPane>
     </center>
 </BorderPane>

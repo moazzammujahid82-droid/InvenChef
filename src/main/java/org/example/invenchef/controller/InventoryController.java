@@ -23,7 +23,7 @@ public class InventoryController {
     private ComboBox<String> categoryCombo;
 
     @FXML
-    private  ComboBox<String> unitCombo;
+    private ComboBox<String> unitCombo;
 
     @FXML
     private DatePicker expiryDatePicker;
@@ -93,7 +93,7 @@ public class InventoryController {
                 "Gram",
                 "Litre",
                 "milliLitre"
-                ));
+        ));
 
         unitCombo.setValue("Kilogram");
 
@@ -215,7 +215,7 @@ public class InventoryController {
             showAlert("Success", "Ingredient added successfully!", Alert.AlertType.INFORMATION);
 
         } catch (NumberFormatException e) {
-            showAlert("Error", "Invalid quantity format", Alert.AlertType.ERROR);
+            showAlert("Error", "Quantity must be a number", Alert.AlertType.ERROR);
         } catch (IllegalStateException e) {
             showAlert("Error", "Fridge is full! Remove some items.", Alert.AlertType.ERROR);
         }
@@ -238,7 +238,7 @@ public class InventoryController {
         ingredientNameField.clear();
         quantityField.clear();
         categoryCombo.setValue("Perishable");
-        unitCombo.setValue("kg");
+        unitCombo.setValue("Kilogram");
         expiryDatePicker.setValue(null);
     }
 
@@ -343,7 +343,7 @@ public class InventoryController {
     private void updatePageIndicator() {
         int totalPages = (int) Math.ceil((double) inventoryData.size() / ITEMS_PER_PAGE);
         if (totalPages == 0)
-                totalPages = 1;
+            totalPages = 1;
         pageIndicator.setText("Screen " + currentPage + " of " + totalPages);
     }
 
