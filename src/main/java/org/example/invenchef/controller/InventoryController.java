@@ -21,6 +21,10 @@ public class InventoryController {
     private TextField quantityField;
     @FXML
     private ComboBox<String> categoryCombo;
+
+    @FXML
+    private ComboBox<String> unitCombo;
+
     @FXML
     private DatePicker expiryDatePicker;
     @FXML
@@ -84,6 +88,15 @@ public class InventoryController {
         ));
         categoryCombo.setValue("Perishable");
 
+        unitCombo.setItems(FXCollections.observableArrayList(
+                "Kilogram",
+                "Gram",
+                "Litre",
+                "milliLitre"
+        ));
+
+        unitCombo.setValue("Kilogram");
+
         // Setup table columns
         setupTableColumns();
 
@@ -135,7 +148,7 @@ public class InventoryController {
             private final Button deleteBtn = new Button("Delete");
 
             {
-                deleteBtn.setStyle(
+                    deleteBtn.setStyle(
                         "-fx-font-size: 12; " +
                         "-fx-padding: 5 10; " +
                         "-fx-background-color: transparent; " +
@@ -158,7 +171,7 @@ public class InventoryController {
             }
         });
 
-        inventoryTable.setColumnResizePolicy(TableView.CONSTRAINED_RESIZE_POLICY);
+        inventoryTable.setColumnResizePolicy(TableView.CONSTRAINED_RESIZE_POLICY_FLEX_LAST_COLUMN);
     }
 
     private void setupFilterButtons() {
@@ -172,19 +185,17 @@ public class InventoryController {
         String name = ingredientNameField.getText().trim();
         String quantityStr = quantityField.getText().trim();
         String category = categoryCombo.getValue();
+        String unit = unitCombo.getValue();
         LocalDate expiryDate = expiryDatePicker.getValue();
 
         // Validation
-        if (name.isEmpty() || quantityStr.isEmpty()) {
+        if (name.isEmpty() || quantityStr.isEmpty() || unit == null || unit.isBlank()) {
             showAlert("Error", "Please fill in all fields", Alert.AlertType.ERROR);
             return;
         }
 
         try {
-            double quantity = Double.parseDouble(quantityStr.split(" ")[0]);
-            String unit = quantityStr.contains(" ") ? 
-                    quantityStr.substring(quantityStr.indexOf(" ") + 1) : 
-                    "units";
+            double quantity = Double.parseDouble(quantityStr);
 
             Ingredients ingredient;
             if (category.equals("Perishable")) {
@@ -204,7 +215,7 @@ public class InventoryController {
             showAlert("Success", "Ingredient added successfully!", Alert.AlertType.INFORMATION);
 
         } catch (NumberFormatException e) {
-            showAlert("Error", "Invalid quantity format", Alert.AlertType.ERROR);
+            showAlert("Error", "Quantity must be a number", Alert.AlertType.ERROR);
         } catch (IllegalStateException e) {
             showAlert("Error", "Fridge is full! Remove some items.", Alert.AlertType.ERROR);
         }
@@ -227,6 +238,7 @@ public class InventoryController {
         ingredientNameField.clear();
         quantityField.clear();
         categoryCombo.setValue("Perishable");
+        unitCombo.setValue("Kilogram");
         expiryDatePicker.setValue(null);
     }
 
@@ -330,7 +342,8 @@ public class InventoryController {
 
     private void updatePageIndicator() {
         int totalPages = (int) Math.ceil((double) inventoryData.size() / ITEMS_PER_PAGE);
-        if (totalPages == 0) totalPages = 1;
+        if (totalPages == 0)
+            totalPages = 1;
         pageIndicator.setText("Screen " + currentPage + " of " + totalPages);
     }
 

@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox xmlns:fx="http://javafx.com/fxml"
+      fx:controller="org.example.invenchef.controller.AppController"
+      minWidth="200"
+      prefWidth="220"
+      maxWidth="220"
+      spacing="8"
+      style="-fx-background-color: #2d6a4f;">
+    <padding>
+        <Insets top="16" right="10" bottom="16" left="10"/>
+    </padding>
+
+    <Button text="Dashboard"
+            fx:id="navDashBoard"
+            prefHeight="52"
+            maxWidth="Infinity"
+            onAction="#showDashBoard"
+            style="-fx-background-color: transparent;
+                   -fx-text-fill: white;
+                   -fx-font-size: 16px;
+                   -fx-padding: 0 0 0 16;
+                   -fx-alignment: CENTER-LEFT;"/>
+
+    <Button text="Inventory"
+            fx:id="navInventory"
+            prefHeight="52"
+            maxWidth="Infinity"
+            onAction="#showInventory"
+            style="-fx-background-color: #40916c;
+                   -fx-text-fill: white;
+                   -fx-font-size: 16px;
+                   -fx-padding: 0 0 0 16;
+                   -fx-alignment: CENTER-LEFT;"/>
+
+    <Button text="Recipes"
+            fx:id="navRecipes"
+            prefHeight="52"
+            maxWidth="Infinity"
+            onAction="#showRecipes"
+            style="-fx-background-color: transparent;
+                   -fx-text-fill: white;
+                   -fx-font-size: 16px;
+                   -fx-padding: 0 0 0 16;
+                   -fx-alignment: CENTER-LEFT;"/>
+
+    <Button text="Planner"
+            fx:id="navPlanner"
+            prefHeight="52"
+            maxWidth="Infinity"
+            onAction="#showPlanner"
+            style="-fx-background-color: transparent;
+                   -fx-text-fill: white;
+                   -fx-font-size: 16px;
+                   -fx-padding: 0 0 0 16;
+                   -fx-alignment: CENTER-LEFT;"/>
+
+    <Region VBox.vgrow="ALWAYS"/>
+
+    <Button text="Settings"
+            fx:id="navSettings"
+            prefHeight="48"
+            maxWidth="Infinity"
+            onAction="#showSettings"
+            style="-fx-background-color: transparent;
+                   -fx-text-fill: white;
+                   -fx-font-size: 15px;
+                   -fx-padding: 0 0 0 16;
+                   -fx-alignment: CENTER-LEFT;"/>
+</VBox>
