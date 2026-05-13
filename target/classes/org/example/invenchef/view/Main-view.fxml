@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+    Main-view.fxml
+    ══════════════
+    This is just a redirect comment file.
+
+    ⚠️  ACTION REQUIRED in your Application class:
+    Change your start() method to load  app-view.fxml  directly:
+
+        Parent root = FXMLLoader.load(
+            getClass().getResource("/org/example/invenchef/view/app-view.fxml")
+        );
+        Scene scene = new Scene(root, 1100, 700);
+        primaryStage.setScene(scene);
+        primaryStage.setTitle("InvenChef");
+        primaryStage.show();
+
+    Do NOT load Main-view.fxml any more — it caused the double-shell bug.
+    Delete this file once you have updated your Application class.
+-->
+
+<?import javafx.scene.layout.StackPane?>
+<fx:root type="javafx.scene.layout.StackPane"
+         xmlns="http://javafx.com/javafx/17"
+         xmlns:fx="http://javafx.com/fxml/1">
+    <!--
+        If for any reason you still need a root FXML entry point,
+        simply load app-view.fxml with fx:include below instead:
+    -->
+    <fx:include source="app-view.fxml"/>
+</fx:root>

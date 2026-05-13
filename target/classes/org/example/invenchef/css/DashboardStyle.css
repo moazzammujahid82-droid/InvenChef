@@ -1,0 +1,37 @@
+.root {
+    -fx-font-family: Arial;
+}
+
+/* TOP BAR */
+.top-bar {
+    -fx-background-color: #1B5E3B;
+}
+
+/* SIDEBAR */
+.sidebar {
+    -fx-background-color: #2E7D52;
+}
+
+/* MENU ITEMS */
+.menu-item {
+    -fx-padding: 13 20 13 18;
+}
+
+.menu-item:hover {
+    -fx-background-color: #3a9e68;
+    -fx-cursor: hand;
+}
+
+/* STAT CARDS */
+.stat-card {
+    -fx-background-color: white;
+    -fx-background-radius: 10;
+    -fx-padding: 15;
+}
+
+/* PANELS */
+.panel {
+    -fx-background-color: white;
+    -fx-background-radius: 10;
+    -fx-padding: 15;
+}

@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane
+        prefHeight="700.0"
+        prefWidth="1100.0"
+        xmlns="http://javafx.com/javafx/17"
+        xmlns:fx="http://javafx.com/fxml/1"
+        fx:controller="org.example.invenchef.controller.AppController"
+        style="-fx-background-color: #f4f4f4;">
+
+    <!-- ═══════════ TOP BAR ═══════════ -->
+    <top>
+        <HBox
+                alignment="CENTER_LEFT"
+                prefHeight="70"
+                style="-fx-background-color: #174b33; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.15), 6, 0, 0, 3);">
+            <padding>
+                <Insets top="15" right="30" bottom="15" left="30"/>
+            </padding>
+
+            <Label
+                    fx:id="pageTitle"
+                    text="Dashboard"
+                    style="-fx-font-size: 26px;
+                       -fx-font-weight: bold;
+                       -fx-text-fill: white;"/>
+
+            <Region HBox.hgrow="ALWAYS"/>
+
+            <Label
+                    text="InvenChef"
+                    style="-fx-font-size: 22px;
+                       -fx-text-fill: #74c69d;
+                       -fx-font-weight: bold;"/>
+        </HBox>
+    </top>
+
+    <!-- ═══════════ SIDEBAR ═══════════ -->
+    <left>
+        <VBox
+                minWidth="200"
+                prefWidth="210"
+                maxWidth="210"
+                spacing="6"
+                style="-fx-background-color: #2d6a4f;">
+            <padding>
+                <Insets top="20" right="10" bottom="20" left="10"/>
+            </padding>
+
+            <Button text="🏠  Dashboard"
+                    fx:id="navDashboard"
+                    prefHeight="50"
+                    maxWidth="Infinity"
+                    onAction="#showDashBoard"
+                    style="-fx-background-color: #40916c;
+                           -fx-text-fill: white;
+                           -fx-font-size: 15px;
+                           -fx-padding: 0 0 0 14;
+                           -fx-alignment: CENTER-LEFT;
+                           -fx-background-radius: 6;
+                           -fx-cursor: hand;"/>
+
+            <Button text="📦  Inventory"
+                    fx:id="navInventory"
+                    prefHeight="50"
+                    maxWidth="Infinity"
+                    onAction="#showInventory"
+                    style="-fx-background-color: transparent;
+                           -fx-text-fill: white;
+                           -fx-font-size: 15px;
+                           -fx-padding: 0 0 0 14;
+                           -fx-alignment: CENTER-LEFT;
+                           -fx-background-radius: 6;
+                           -fx-cursor: hand;"/>
+
+            <Button text="🍳  Recipes"
+                    fx:id="navRecipes"
+                    prefHeight="50"
+                    maxWidth="Infinity"
+                    onAction="#showRecipes"
+                    style="-fx-background-color: transparent;
+                           -fx-text-fill: white;
+                           -fx-font-size: 15px;
+                           -fx-padding: 0 0 0 14;
+                           -fx-alignment: CENTER-LEFT;
+                           -fx-background-radius: 6;
+                           -fx-cursor: hand;"/>
+
+            <Button text="📅  Meal Planner"
+                    fx:id="navPlanner"
+                    prefHeight="50"
+                    maxWidth="Infinity"
+                    onAction="#showPlanner"
+                    style="-fx-background-color: transparent;
+                           -fx-text-fill: white;
+                           -fx-font-size: 15px;
+                           -fx-padding: 0 0 0 14;
+                           -fx-alignment: CENTER-LEFT;
+                           -fx-background-radius: 6;
+                           -fx-cursor: hand;"/>
+
+            <Region VBox.vgrow="ALWAYS"/>
+
+            <Button text="⚙️ Settings"
+                    fx:id="navSettings"
+                    prefHeight="48"
+                    maxWidth="Infinity"
+                    onAction="#showSettings"
+                    style="-fx-background-color: transparent;
+                           -fx-text-fill: #b7e4c7;
+                           -fx-font-size: 14px;
+                           -fx-padding: 0 0 0 14;
+                           -fx-alignment: CENTER-LEFT;
+                           -fx-background-radius: 6;
+                           -fx-cursor: hand;"/>
+        </VBox>
+    </left>
+
+    <!-- ═══════════ CONTENT AREA ═══════════ -->
+    <center>
+        <StackPane fx:id="contentArea" style="-fx-background-color: #f4f4f4;"/>
+    </center>
+
+</BorderPane>
