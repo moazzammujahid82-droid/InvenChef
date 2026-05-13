@@ -12,7 +12,6 @@
         fx:controller="org.example.invenchef.controller.AppController"
         style="-fx-background-color: #f4f4f4;">
 
-    <!-- ═══════════ TOP BAR ═══════════ -->
     <top>
         <HBox
                 alignment="CENTER_LEFT"
@@ -39,7 +38,6 @@
         </HBox>
     </top>
 
-    <!-- ═══════════ SIDEBAR ═══════════ -->
     <left>
         <VBox
                 minWidth="200"
@@ -120,7 +118,6 @@
         </VBox>
     </left>
 
-    <!-- ═══════════ CONTENT AREA ═══════════ -->
     <center>
         <StackPane fx:id="contentArea" style="-fx-background-color: #f4f4f4;"/>
     </center>

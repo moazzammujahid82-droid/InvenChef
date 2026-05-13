@@ -16,20 +16,16 @@ public class AppController {
 
     private static final Logger LOGGER = Logger.getLogger(AppController.class.getName());
 
-    // ── centre pane that holds swapped views ──────────────────────────────────
     @FXML private StackPane contentArea;
 
-    // ── top-bar title ─────────────────────────────────────────────────────────
     @FXML private Label pageTitle;
 
-    // ── sidebar nav buttons (for active-highlight) ────────────────────────────
     @FXML private Button navDashboard;
     @FXML private Button navInventory;
     @FXML private Button navRecipes;
     @FXML private Button navPlanner;
     @FXML private Button navSettings;
 
-    // ── styles ────────────────────────────────────────────────────────────────
     private static final String ACTIVE_STYLE =
             "-fx-background-color: #40916c; -fx-text-fill: white; " +
             "-fx-font-size: 15px; -fx-padding: 0 0 0 14; " +
@@ -45,13 +41,11 @@ public class AppController {
             "-fx-font-size: 14px; -fx-padding: 0 0 0 14; " +
             "-fx-alignment: CENTER-LEFT; -fx-background-radius: 6; -fx-cursor: hand;";
 
-    // ── lifecycle ─────────────────────────────────────────────────────────────
     @FXML
     public void initialize() {
         showDashBoard();
     }
 
-    // ── nav handlers (called by FXML onAction) ────────────────────────────────
     @FXML
     public void showDashBoard() {
         pageTitle.setText("Dashboard");
@@ -87,12 +81,7 @@ public class AppController {
         loadView("/org/example/invenchef/view/settings-view.fxml");
     }
 
-    // ── helpers ───────────────────────────────────────────────────────────────
 
-    /**
-     * Loads an FXML file into contentArea WITHOUT touching the Stage,
-     * so the window never resizes or minimises.
-     */
     private void loadView(String resourcePath) {
         if (contentArea == null) {
             LOGGER.warning("contentArea is null — check fx:id in app-view.fxml");
@@ -113,7 +102,6 @@ public class AppController {
         }
     }
 
-    /** Replaces the content area with a simple message label. */
     private void showPlaceholder(String message) {
         if (contentArea == null) return;
         Label l = new Label(message);
@@ -123,13 +111,11 @@ public class AppController {
         contentArea.getChildren().setAll(placeholder);
     }
 
-    /** Highlights the active sidebar button and resets all others. */
     private void setActiveButton(Button active) {
         Button[] navButtons = {navDashboard, navInventory, navRecipes, navPlanner};
         for (Button btn : navButtons) {
             btn.setStyle(btn == active ? ACTIVE_STYLE : INACTIVE_STYLE);
         }
-        // Settings uses a slightly different inactive colour
         navSettings.setStyle(
             navSettings == active ? ACTIVE_STYLE : INACTIVE_SETTINGS_STYLE
         );

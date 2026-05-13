@@ -14,7 +14,6 @@ import java.time.format.DateTimeFormatter;
 
 public class InventoryController {
 
-    // Add Ingredient Section
     @FXML
     private TextField ingredientNameField;
     @FXML
@@ -32,7 +31,6 @@ public class InventoryController {
     @FXML
     private Button clearFormBtn;
 
-    // Current Inventory Section
     @FXML
     private TableView<Ingredients> inventoryTable;
     @FXML
@@ -46,7 +44,6 @@ public class InventoryController {
     @FXML
     private TableColumn<Ingredients, Void> deleteColumn;
 
-    // Filter Tabs
     @FXML
     private Button allTab;
     @FXML
@@ -56,7 +53,6 @@ public class InventoryController {
     @FXML
     private Button expiredTab;
 
-    // Stats Section
     @FXML
     private Label totalLabel;
     @FXML
@@ -69,7 +65,6 @@ public class InventoryController {
     @FXML
     private Label pageIndicator;
 
-    // Backend
     private Fridge fridge;
     private ObservableList<Ingredients> inventoryData;
     private String currentFilter = "ALL";
@@ -78,10 +73,8 @@ public class InventoryController {
 
     @FXML
     public void initialize() {
-        // Initialize backend
         fridge = new Fridge();
 
-        // Setup category combo
         categoryCombo.setItems(FXCollections.observableArrayList(
                 "Perishable",
                 "Pantry Staple"
@@ -97,20 +90,14 @@ public class InventoryController {
 
         unitCombo.setValue("Kilogram");
 
-        // Setup table columns
         setupTableColumns();
-
-        // Setup filter buttons
         setupFilterButtons();
 
-        // Setup event handlers
         addIngredientBtn.setOnAction(e -> handleAddIngredient());
         clearFormBtn.setOnAction(e -> handleClearForm());
 
-        // Load initial data
         loadInventory();
 
-        // Update stats
         updateInventoryStats();
     }
 
@@ -188,7 +175,6 @@ public class InventoryController {
         String unit = unitCombo.getValue();
         LocalDate expiryDate = expiryDatePicker.getValue();
 
-        // Validation
         if (name.isEmpty() || quantityStr.isEmpty() || unit == null || unit.isBlank()) {
             showAlert("Error", "Please fill in all fields", Alert.AlertType.ERROR);
             return;

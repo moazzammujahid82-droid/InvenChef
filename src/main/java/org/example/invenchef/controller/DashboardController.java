@@ -10,41 +10,33 @@ import javafx.scene.layout.VBox;
 
 public class DashboardController {
 
-    // ── Stat card labels (must match dashboard-view.fxml fx:id) ──────────────
     @FXML private Label totalIngredientsLabel;
     @FXML private Label expiringSoonLabel;
     @FXML private Label expiredItemsLabel;
     @FXML private Label recipesAvailableLabel;
     @FXML private Label inventorySummaryLabel;
 
-    // ── Panel containers (must match dashboard-view.fxml fx:id) ──────────────
     @FXML private VBox expiringItemsContainer;   // ← was "recentActivityContainer" (mismatch fixed)
     @FXML private VBox recipesContainer;         // ← was "suggestionsContainer" (mismatch fixed)
 
-    // ── Internal state ────────────────────────────────────────────────────────
     private int inventoryCount = 0;
 
-    // ── Lifecycle ─────────────────────────────────────────────────────────────
     @FXML
     public void initialize() {
-        // Set stat cards
         totalIngredientsLabel.setText("0");
         expiringSoonLabel.setText("0");
         expiredItemsLabel.setText("0");
         recipesAvailableLabel.setText("0");
         inventorySummaryLabel.setText("Total: 0 items across categories");
 
-        // Populate panels with placeholder rows
         populateExpiringItems();
         populateRecipes();
     }
 
-    // ── Panel population ──────────────────────────────────────────────────────
 
     private void populateExpiringItems() {
         expiringItemsContainer.getChildren().clear();
 
-        // Sample rows — replace with real data from your Fridge/DB layer
         String[][] items = {
             {"Milk",   "Expires today",    "#d62828"},
             {"Eggs",   "Expires in 2 days","#fca311"},
@@ -63,7 +55,6 @@ public class DashboardController {
     private void populateRecipes() {
         recipesContainer.getChildren().clear();
 
-        // Sample rows — replace with real recipe data
         String[][] recipes = {
             {"Omelette",        "2 ingredients available","#40916c"},
             {"Butter Chicken",  "5 ingredients available","#40916c"},
@@ -79,7 +70,6 @@ public class DashboardController {
         }
     }
 
-    /** Builds a simple two-label row with a coloured dot indicator. */
     private HBox buildRow(String title, String subtitle, String dotColor) {
         HBox row = new HBox(12);
         row.setPadding(new Insets(10, 12, 10, 12));
@@ -105,8 +95,6 @@ public class DashboardController {
         l.setStyle("-fx-text-fill: #aaa; -fx-font-size: 13px; -fx-padding: 10 0 0 0;");
         return l;
     }
-
-    // ── Public API (called from other controllers if needed) ──────────────────
 
     public void increaseInventory() {
         inventoryCount++;
