@@ -19,9 +19,7 @@
                 <Insets top="24" right="24" bottom="24" left="24"/>
             </padding>
 
-            <!-- ── Stat Cards ───────────────────────────────────────────── -->
             <HBox spacing="16">
-                <!-- Total Ingredients -->
                 <VBox HBox.hgrow="ALWAYS" spacing="6"
                       style="-fx-background-color: white; -fx-padding: 20;
                              -fx-background-radius: 10;
@@ -32,7 +30,6 @@
                            style="-fx-text-fill: #777; -fx-font-size: 13px;"/>
                 </VBox>
 
-                <!-- Expiring Soon -->
                 <VBox HBox.hgrow="ALWAYS" spacing="6"
                       style="-fx-background-color: white; -fx-padding: 20;
                              -fx-background-radius: 10;
@@ -43,7 +40,6 @@
                            style="-fx-text-fill: #777; -fx-font-size: 13px;"/>
                 </VBox>
 
-                <!-- Expired Items -->
                 <VBox HBox.hgrow="ALWAYS" spacing="6"
                       style="-fx-background-color: white; -fx-padding: 20;
                              -fx-background-radius: 10;
@@ -54,7 +50,6 @@
                            style="-fx-text-fill: #777; -fx-font-size: 13px;"/>
                 </VBox>
 
-                <!-- Recipes Ready -->
                 <VBox HBox.hgrow="ALWAYS" spacing="6"
                       style="-fx-background-color: white; -fx-padding: 20;
                              -fx-background-radius: 10;
@@ -66,15 +61,12 @@
                 </VBox>
             </HBox>
 
-            <!-- ── Summary label ────────────────────────────────────────── -->
             <Label fx:id="inventorySummaryLabel"
                    text="Total: 0 items across categories"
                    style="-fx-text-fill: #555; -fx-font-size: 13px;"/>
 
-            <!-- ── Detail Panels ─────────────────────────────────────────── -->
             <HBox spacing="16" VBox.vgrow="ALWAYS">
 
-                <!-- Expiring Items Panel  (fx:id matches DashboardController) -->
                 <VBox HBox.hgrow="ALWAYS" spacing="14"
                       style="-fx-background-color: white; -fx-padding: 24;
                              -fx-background-radius: 12;
@@ -82,11 +74,9 @@
                     <Label text="⚠️  Expiring Soon"
                            style="-fx-font-size: 18px; -fx-font-weight: bold; -fx-text-fill: #1b4332;"/>
                     <Separator/>
-                    <!-- fx:id MUST match DashboardController field name -->
                     <VBox fx:id="expiringItemsContainer" spacing="10"/>
                 </VBox>
 
-                <!-- Recipes Panel -->
                 <VBox HBox.hgrow="ALWAYS" spacing="14"
                       style="-fx-background-color: white; -fx-padding: 24;
                              -fx-background-radius: 12;
@@ -94,7 +84,6 @@
                     <Label text="🍳  Suggested Recipes"
                            style="-fx-font-size: 18px; -fx-font-weight: bold; -fx-text-fill: #1b4332;"/>
                     <Separator/>
-                    <!-- fx:id MUST match DashboardController field name -->
                     <VBox fx:id="recipesContainer" spacing="10"/>
                 </VBox>
             </HBox>
