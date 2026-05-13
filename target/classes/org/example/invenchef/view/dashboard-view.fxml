@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<ScrollPane fitToHeight="true"
+            fitToWidth="true"
+            style="-fx-background-color: transparent; -fx-background: #F5F5F5;"
+            xmlns="http://javafx.com/javafx/17"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="org.example.invenchef.controller.DashboardController">
+    <content>
+        <VBox spacing="20" style="-fx-background-color: #F5F5F5;">
+            <padding>
+                <Insets top="24" right="24" bottom="24" left="24"/>
+            </padding>
+
+            <!-- ── Stat Cards ───────────────────────────────────────────── -->
+            <HBox spacing="16">
+                <!-- Total Ingredients -->
+                <VBox HBox.hgrow="ALWAYS" spacing="6"
+                      style="-fx-background-color: white; -fx-padding: 20;
+                             -fx-background-radius: 10;
+                             -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.08), 8, 0, 0, 2);">
+                    <Label fx:id="totalIngredientsLabel" text="0"
+                           style="-fx-font-size: 30px; -fx-font-weight: bold; -fx-text-fill: #2d6a4f;"/>
+                    <Label text="Total Ingredients"
+                           style="-fx-text-fill: #777; -fx-font-size: 13px;"/>
+                </VBox>
+
+                <!-- Expiring Soon -->
+                <VBox HBox.hgrow="ALWAYS" spacing="6"
+                      style="-fx-background-color: white; -fx-padding: 20;
+                             -fx-background-radius: 10;
+                             -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.08), 8, 0, 0, 2);">
+                    <Label fx:id="expiringSoonLabel" text="0"
+                           style="-fx-font-size: 30px; -fx-font-weight: bold; -fx-text-fill: #fca311;"/>
+                    <Label text="Expiring Soon"
+                           style="-fx-text-fill: #777; -fx-font-size: 13px;"/>
+                </VBox>
+
+                <!-- Expired Items -->
+                <VBox HBox.hgrow="ALWAYS" spacing="6"
+                      style="-fx-background-color: white; -fx-padding: 20;
+                             -fx-background-radius: 10;
+                             -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.08), 8, 0, 0, 2);">
+                    <Label fx:id="expiredItemsLabel" text="0"
+                           style="-fx-font-size: 30px; -fx-font-weight: bold; -fx-text-fill: #d62828;"/>
+                    <Label text="Expired Items"
+                           style="-fx-text-fill: #777; -fx-font-size: 13px;"/>
+                </VBox>
+
+                <!-- Recipes Ready -->
+                <VBox HBox.hgrow="ALWAYS" spacing="6"
+                      style="-fx-background-color: white; -fx-padding: 20;
+                             -fx-background-radius: 10;
+                             -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.08), 8, 0, 0, 2);">
+                    <Label fx:id="recipesAvailableLabel" text="0"
+                           style="-fx-font-size: 30px; -fx-font-weight: bold; -fx-text-fill: #40916c;"/>
+                    <Label text="Recipes Ready"
+                           style="-fx-text-fill: #777; -fx-font-size: 13px;"/>
+                </VBox>
+            </HBox>
+
+            <!-- ── Summary label ────────────────────────────────────────── -->
+            <Label fx:id="inventorySummaryLabel"
+                   text="Total: 0 items across categories"
+                   style="-fx-text-fill: #555; -fx-font-size: 13px;"/>
+
+            <!-- ── Detail Panels ─────────────────────────────────────────── -->
+            <HBox spacing="16" VBox.vgrow="ALWAYS">
+
+                <!-- Expiring Items Panel  (fx:id matches DashboardController) -->
+                <VBox HBox.hgrow="ALWAYS" spacing="14"
+                      style="-fx-background-color: white; -fx-padding: 24;
+                             -fx-background-radius: 12;
+                             -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.05), 10, 0, 0, 2);">
+                    <Label text="⚠️  Expiring Soon"
+                           style="-fx-font-size: 18px; -fx-font-weight: bold; -fx-text-fill: #1b4332;"/>
+                    <Separator/>
+                    <!-- fx:id MUST match DashboardController field name -->
+                    <VBox fx:id="expiringItemsContainer" spacing="10"/>
+                </VBox>
+
+                <!-- Recipes Panel -->
+                <VBox HBox.hgrow="ALWAYS" spacing="14"
+                      style="-fx-background-color: white; -fx-padding: 24;
+                             -fx-background-radius: 12;
+                             -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.05), 10, 0, 0, 2);">
+                    <Label text="🍳  Suggested Recipes"
+                           style="-fx-font-size: 18px; -fx-font-weight: bold; -fx-text-fill: #1b4332;"/>
+                    <Separator/>
+                    <!-- fx:id MUST match DashboardController field name -->
+                    <VBox fx:id="recipesContainer" spacing="10"/>
+                </VBox>
+            </HBox>
+        </VBox>
+    </content>
+</ScrollPane>

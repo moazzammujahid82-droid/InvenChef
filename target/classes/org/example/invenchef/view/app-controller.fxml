@@ -17,7 +17,7 @@
     </padding>
 
     <Button text="Dashboard"
-            fx:id="navDashBoard"
+            fx:id="navDashboard"
             prefHeight="52"
             maxWidth="Infinity"
             onAction="#showDashBoard"
@@ -25,18 +25,20 @@
                    -fx-text-fill: white;
                    -fx-font-size: 16px;
                    -fx-padding: 0 0 0 16;
-                   -fx-alignment: CENTER-LEFT;"/>
+                   -fx-alignment: CENTER-LEFT;
+                   -fx-cursor: hand;"/>
 
     <Button text="Inventory"
             fx:id="navInventory"
             prefHeight="52"
             maxWidth="Infinity"
             onAction="#showInventory"
-            style="-fx-background-color: #40916c;
+            style="-fx-background-color: transparent;
                    -fx-text-fill: white;
                    -fx-font-size: 16px;
                    -fx-padding: 0 0 0 16;
-                   -fx-alignment: CENTER-LEFT;"/>
+                   -fx-alignment: CENTER-LEFT;
+                   -fx-cursor: hand;"/>
 
     <Button text="Recipes"
             fx:id="navRecipes"
@@ -47,7 +49,8 @@
                    -fx-text-fill: white;
                    -fx-font-size: 16px;
                    -fx-padding: 0 0 0 16;
-                   -fx-alignment: CENTER-LEFT;"/>
+                   -fx-alignment: CENTER-LEFT;
+                   -fx-cursor: hand;"/>
 
     <Button text="Planner"
             fx:id="navPlanner"
@@ -58,7 +61,8 @@
                    -fx-text-fill: white;
                    -fx-font-size: 16px;
                    -fx-padding: 0 0 0 16;
-                   -fx-alignment: CENTER-LEFT;"/>
+                   -fx-alignment: CENTER-LEFT;
+                   -fx-cursor: hand;"/>
 
     <Region VBox.vgrow="ALWAYS"/>
 
@@ -71,5 +75,6 @@
                    -fx-text-fill: white;
                    -fx-font-size: 15px;
                    -fx-padding: 0 0 0 16;
-                   -fx-alignment: CENTER-LEFT;"/>
+                   -fx-alignment: CENTER-LEFT;
+                   -fx-cursor: hand;"/>
 </VBox>

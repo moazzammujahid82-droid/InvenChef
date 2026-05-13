@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+
+<!--
+    fx:controller added — SettingsController.java must exist in the same package.
+    The class can stay empty; it just needs to be present so FXMLLoader doesn't crash.
+-->
+<ScrollPane fitToWidth="true"
+            style="-fx-background-color: transparent; -fx-background: #f4f4f4;"
+            xmlns="http://javafx.com/javafx/17"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="org.example.invenchef.controller.SettingsController">
+
+    <VBox spacing="25.0" style="-fx-background-color: #f4f4f4;">
+        <padding>
+            <Insets bottom="30.0" left="30.0" right="30.0" top="30.0"/>
+        </padding>
+
+        <GridPane hgap="25.0" vgap="25.0">
+            <columnConstraints>
+                <ColumnConstraints hgrow="ALWAYS" minWidth="10.0" prefWidth="100.0"/>
+                <ColumnConstraints hgrow="ALWAYS" minWidth="10.0" prefWidth="100.0"/>
+            </columnConstraints>
+            <rowConstraints>
+                <RowConstraints minHeight="10.0" vgrow="SOMETIMES"/>
+                <RowConstraints minHeight="10.0" vgrow="SOMETIMES"/>
+            </rowConstraints>
+
+            <!-- User Profile Card -->
+            <VBox style="-fx-background-color: white;
+                         -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.1), 10, 0, 0, 5);
+                         -fx-background-radius: 10;"
+                  GridPane.columnIndex="0" GridPane.rowIndex="0">
+                <HBox alignment="CENTER_LEFT" spacing="10.0"
+                      style="-fx-background-color: #d8eedb; -fx-background-radius: 10 10 0 0;">
+                    <padding><Insets bottom="12.0" left="15.0" right="15.0" top="12.0"/></padding>
+                    <Label text="👤  User Profile"
+                           style="-fx-font-weight: bold; -fx-text-fill: #2d5a3f; -fx-font-size: 14px;"/>
+                </HBox>
+                <VBox spacing="10.0">
+                    <padding><Insets bottom="20.0" left="15.0" right="15.0" top="16.0"/></padding>
+                    <HBox alignment="CENTER_LEFT" style="-fx-background-color: #f9f9f9; -fx-padding: 10;">
+                        <Label text="Name:" style="-fx-text-fill: #777;" prefWidth="140"/>
+                        <Label text="Chef Moazzam" style="-fx-font-weight: bold;"/>
+                    </HBox>
+                    <HBox alignment="CENTER_LEFT" style="-fx-padding: 10;">
+                        <Label text="Email:" style="-fx-text-fill: #777;" prefWidth="140"/>
+                        <Label text="Moazzam@gmail.com" style="-fx-font-weight: bold;"/>
+                    </HBox>
+                    <HBox alignment="CENTER_LEFT" style="-fx-background-color: #f9f9f9; -fx-padding: 10;">
+                        <Label text="Location:" style="-fx-text-fill: #777;" prefWidth="140"/>
+                        <Label text="Lahore, PK" style="-fx-font-weight: bold;"/>
+                    </HBox>
+                </VBox>
+            </VBox>
+
+            <!-- Dietary Preferences Card -->
+            <VBox style="-fx-background-color: white;
+                         -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.1), 10, 0, 0, 5);
+                         -fx-background-radius: 10;"
+                  GridPane.columnIndex="1" GridPane.rowIndex="0">
+                <HBox alignment="CENTER_LEFT" spacing="10.0"
+                      style="-fx-background-color: #d8eedb; -fx-background-radius: 10 10 0 0;">
+                    <padding><Insets bottom="12.0" left="15.0" right="15.0" top="12.0"/></padding>
+                    <Label text="🍽️ Dietary Preferences"
+                           style="-fx-font-weight: bold; -fx-text-fill: #2d5a3f; -fx-font-size: 14px;"/>
+                </HBox>
+                <VBox spacing="10.0">
+                    <padding><Insets bottom="20.0" left="15.0" right="15.0" top="16.0"/></padding>
+                    <HBox alignment="CENTER_LEFT" style="-fx-background-color: #f9f9f9; -fx-padding: 10;">
+                        <Label text="Diet Type:" style="-fx-text-fill: #777;" prefWidth="140"/>
+                        <Label text="Non Veg" style="-fx-font-weight: bold;"/>
+                    </HBox>
+                    <HBox alignment="CENTER_LEFT" style="-fx-padding: 10;">
+                        <Label text="Allergies:" style="-fx-text-fill: #777;" prefWidth="140"/>
+                        <Label text="None" style="-fx-font-weight: bold;"/>
+                    </HBox>
+                    <HBox alignment="CENTER_LEFT" style="-fx-background-color: #f9f9f9; -fx-padding: 10;">
+                        <Label text="Cuisine:" style="-fx-text-fill: #777;" prefWidth="140"/>
+                        <Label text="South Asian" style="-fx-font-weight: bold;"/>
+                    </HBox>
+                </VBox>
+            </VBox>
+
+            <!-- Notifications Card -->
+            <VBox style="-fx-background-color: white;
+                         -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.1), 10, 0, 0, 5);
+                         -fx-background-radius: 10;"
+                  GridPane.columnIndex="0" GridPane.rowIndex="1">
+                <HBox alignment="CENTER_LEFT" spacing="10.0"
+                      style="-fx-background-color: #d8eedb; -fx-background-radius: 10 10 0 0;">
+                    <padding><Insets bottom="12.0" left="15.0" right="15.0" top="12.0"/></padding>
+                    <Label text="🔔  Notifications"
+                           style="-fx-font-weight: bold; -fx-text-fill: #2d5a3f; -fx-font-size: 14px;"/>
+                </HBox>
+                <VBox spacing="10.0">
+                    <padding><Insets bottom="20.0" left="15.0" right="15.0" top="16.0"/></padding>
+                    <HBox alignment="CENTER_LEFT" style="-fx-background-color: #f9f9f9; -fx-padding: 10;">
+                        <Label text="Expiry Alerts:" style="-fx-text-fill: #777;" prefWidth="140"/>
+                        <Label text="ON" style="-fx-font-weight: bold; -fx-text-fill: #40916c;"/>
+                    </HBox>
+                    <HBox alignment="CENTER_LEFT" style="-fx-padding: 10;">
+                        <Label text="Daily Tips:" style="-fx-text-fill: #777;" prefWidth="140"/>
+                        <Label text="ON" style="-fx-font-weight: bold; -fx-text-fill: #40916c;"/>
+                    </HBox>
+                    <HBox alignment="CENTER_LEFT" style="-fx-background-color: #f9f9f9; -fx-padding: 10;">
+                        <Label text="Shopping Reminders:" style="-fx-text-fill: #777;" prefWidth="140"/>
+                        <Label text="OFF" style="-fx-font-weight: bold; -fx-text-fill: #aaa;"/>
+                    </HBox>
+                </VBox>
+            </VBox>
+
+            <VBox style="-fx-background-color: white;
+                         -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.1), 10, 0, 0, 5);
+                         -fx-background-radius: 10;"
+                  GridPane.columnIndex="1" GridPane.rowIndex="1">
+                <HBox alignment="CENTER_LEFT" spacing="10.0"
+                      style="-fx-background-color: #d8eedb; -fx-background-radius: 10 10 0 0;">
+                    <padding><Insets bottom="12.0" left="15.0" right="15.0" top="12.0"/></padding>
+                    <Label text="💾  Data Management"
+                           style="-fx-font-weight: bold; -fx-text-fill: #2d5a3f; -fx-font-size: 14px;"/>
+                </HBox>
+                <VBox spacing="10.0">
+                    <padding><Insets bottom="20.0" left="15.0" right="15.0" top="16.0"/></padding>
+                    <HBox alignment="CENTER_LEFT" style="-fx-background-color: #f9f9f9; -fx-padding: 10;">
+                        <Label text="Auto Save:" style="-fx-text-fill: #777;" prefWidth="140"/>
+                        <Label text="ON" style="-fx-font-weight: bold; -fx-text-fill: #40916c;"/>
+                    </HBox>
+                    <HBox alignment="CENTER_LEFT" style="-fx-padding: 10;">
+                        <Label text="Backup File:" style="-fx-text-fill: #777;" prefWidth="140"/>
+                        <Label text="ingredients.txt" style="-fx-font-weight: bold;"/>
+                    </HBox>
+                    <HBox alignment="CENTER_LEFT" style="-fx-background-color: #f9f9f9; -fx-padding: 10;">
+                        <Label text="Last Saved:" style="-fx-text-fill: #777;" prefWidth="140"/>
+                        <Label text="Today 10:32 AM" style="-fx-font-weight: bold;"/>
+                    </HBox>
+                </VBox>
+            </VBox>
+        </GridPane>
+
+        <!-- Footer Buttons -->
+        <HBox spacing="15.0">
+            <Button prefHeight="45.0" prefWidth="220.0"
+                    style="-fx-background-color: #46916f; -fx-text-fill: white;
+                           -fx-font-weight: bold; -fx-background-radius: 8; -fx-cursor: hand;"
+                    text="💾  Save Settings"/>
+            <Button prefHeight="45.0" prefWidth="220.0"
+                    style="-fx-background-color: #eee; -fx-text-fill: #666;
+                           -fx-font-weight: bold; -fx-background-radius: 8; -fx-cursor: hand;"
+                    text="🔄  Reset Defaults"/>
+        </HBox>
+    </VBox>
+</ScrollPane>
