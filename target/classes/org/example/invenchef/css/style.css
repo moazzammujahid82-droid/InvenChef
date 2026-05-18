@@ -1,0 +1,221 @@
+/* ═══════════════════════════════════════════════════════
+   InvenChef — style.css
+   ═══════════════════════════════════════════════════════ */
+
+/* GLOBAL */
+.root {
+    -fx-font-family: Arial;
+}
+
+/* ═══════════════════════════════════════════════════════
+   DASHBOARD — existing classes (unchanged)
+   ═══════════════════════════════════════════════════════ */
+
+/* TOP BAR */
+.top-bar {
+    -fx-background-color: #1B5E3B;
+}
+
+/* SIDEBAR */
+.sidebar {
+    -fx-background-color: #2E7D52;
+}
+
+/* MENU ITEMS */
+.menu-item {
+    -fx-padding: 13 20 13 18;
+}
+
+.menu-item:hover {
+    -fx-background-color: #3a9e68;
+    -fx-cursor: hand;
+}
+
+/* STAT CARDS */
+.stat-card {
+    -fx-background-color: white;
+    -fx-background-radius: 10;
+    -fx-padding: 15;
+}
+
+/* PANELS */
+.panel {
+    -fx-background-color: white;
+    -fx-background-radius: 10;
+    -fx-padding: 15;
+}
+
+/* ═══════════════════════════════════════════════════════
+   SPLASH SCREEN — new classes
+   ═══════════════════════════════════════════════════════ */
+
+/* The whole splash background */
+.splash-root {
+    -fx-background-color: #1B5E3B;
+}
+
+/* Big app name text */
+.splash-title {
+    -fx-text-fill: white;
+    -fx-font-size: 48;
+    -fx-font-weight: bold;
+    -fx-font-family: Arial;
+}
+
+/* Tagline under app name */
+.splash-subtitle {
+    -fx-text-fill: #A5D6A7;
+    -fx-font-size: 16;
+    -fx-font-family: Arial;
+}
+
+/* Loading status text */
+.splash-loading-text {
+    -fx-text-fill: #A5D6A7;
+    -fx-font-size: 12;
+    -fx-font-family: Arial;
+}
+
+/* Version label bottom right */
+.splash-version {
+    -fx-text-fill: #4CAF50;
+    -fx-font-size: 11;
+    -fx-font-family: Arial;
+}
+
+/* Progress bar color */
+.splash-progress .bar {
+    -fx-background-color: #A5D6A7;
+    -fx-background-radius: 5;
+}
+
+.splash-progress .track {
+    -fx-background-color: #2E7D52;
+    -fx-background-radius: 5;
+}
+
+/* ═══════════════════════════════════════════════════════
+   LOGIN SCREEN — new classes
+   ═══════════════════════════════════════════════════════ */
+
+/* Left green branding panel */
+.login-left-panel {
+    -fx-background-color: #1B5E3B;
+}
+
+/* Right white form panel */
+.login-right-panel {
+    -fx-background-color: #F5F5F5;
+}
+
+/* "Welcome Back!" title */
+.login-title {
+    -fx-font-size: 26;
+    -fx-font-weight: bold;
+    -fx-font-family: Arial;
+    -fx-text-fill: #1B5E3B;
+}
+
+/* "Sign in to your account" subtitle */
+.login-subtitle {
+    -fx-font-size: 13;
+    -fx-text-fill: gray;
+    -fx-font-family: Arial;
+}
+
+/* Field labels (Email, Password) */
+.login-field-label {
+    -fx-font-size: 13;
+    -fx-font-weight: bold;
+    -fx-font-family: Arial;
+    -fx-text-fill: #333;
+}
+
+/* Text input fields */
+.login-field {
+    -fx-background-radius: 8;
+    -fx-border-radius: 8;
+    -fx-border-color: #ddd;
+    -fx-padding: 10 14;
+    -fx-font-size: 13;
+    -fx-font-family: Arial;
+}
+
+.login-field:focused {
+    -fx-border-color: #2E7D52;
+    -fx-border-width: 1.5;
+}
+
+/* Sign In button */
+.login-btn {
+    -fx-background-color: #1B5E3B;
+    -fx-text-fill: white;
+    -fx-font-size: 14;
+    -fx-font-weight: bold;
+    -fx-font-family: Arial;
+    -fx-background-radius: 8;
+    -fx-cursor: hand;
+    -fx-padding: 12;
+}
+
+.login-btn:hover {
+    -fx-background-color: #2E7D52;
+}
+
+.login-btn:pressed {
+    -fx-background-color: #145230;
+}
+
+/* Create Account button */
+.register-btn {
+    -fx-background-color: white;
+    -fx-text-fill: #1B5E3B;
+    -fx-font-size: 13;
+    -fx-font-family: Arial;
+    -fx-background-radius: 8;
+    -fx-border-color: #1B5E3B;
+    -fx-border-radius: 8;
+    -fx-cursor: hand;
+    -fx-padding: 10;
+}
+
+.register-btn:hover {
+    -fx-background-color: #E8F5E9;
+}
+
+/* Error message label */
+.login-error {
+    -fx-text-fill: #F44336;
+    -fx-font-size: 12;
+    -fx-font-family: Arial;
+}
+
+/* Forgot password link */
+.login-link {
+    -fx-text-fill: #2E7D52;
+    -fx-font-size: 12;
+    -fx-cursor: hand;
+    -fx-font-family: Arial;
+}
+
+/* Feature bullet labels on left panel */
+.login-feature {
+    -fx-text-fill: #C8E6C9;
+    -fx-font-size: 13;
+    -fx-font-family: Arial;
+}
+
+/* App name on left panel */
+.login-brand-title {
+    -fx-text-fill: white;
+    -fx-font-size: 36;
+    -fx-font-weight: bold;
+    -fx-font-family: Arial;
+}
+
+/* Tagline on left panel */
+.login-brand-sub {
+    -fx-text-fill: #A5D6A7;
+    -fx-font-size: 13;
+    -fx-font-family: Arial;
+}
