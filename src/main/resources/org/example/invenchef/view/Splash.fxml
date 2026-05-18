@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane xmlns="http://javafx.com/javafx/17"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="org.example.invenchef.controller.SplashController"
+            prefWidth="950"
+            prefHeight="550"
+            style="-fx-background-color: #1B5E3B;">
+
+    <VBox alignment="CENTER"
+          spacing="20"
+          AnchorPane.topAnchor="0"
+          AnchorPane.bottomAnchor="0"
+          AnchorPane.leftAnchor="0"
+          AnchorPane.rightAnchor="0">
+
+        <Label text="👩‍🍳"
+               style="-fx-font-size: 80;"/>
+
+        <Label text="InvenChef"
+               style="-fx-text-fill: white;
+                      -fx-font-family: Arial;
+                      -fx-font-size: 48;
+                      -fx-font-weight: bold;"/>
+
+        <Label text="Smart Kitchen Inventory Manager"
+               style="-fx-text-fill: #A5D6A7;
+                      -fx-font-size: 18;
+                      -fx-font-family: Arial;"/>
+
+        <Region prefHeight="20"/>
+
+        <ProgressBar fx:id="loadingBar"
+                     prefWidth="260"
+                     progress="0"
+                     style="-fx-accent: #A5D6A7;
+                            -fx-background-color: #2E7D52;
+                            -fx-background-radius: 5;"/>
+
+        <Label fx:id="loadingLabel"
+               text="Loading..."
+               style="-fx-text-fill: #A5D6A7;
+                      -fx-font-size: 13;
+                      -fx-font-family: Arial;"/>
+    </VBox>
+
+</AnchorPane>
